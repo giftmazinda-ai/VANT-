@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VANTÉ | Wear your Standard. Complete men's looks in Nairobi</title>
+<meta name="description" content="VANTÉ curates complete men's looks: clothes and shoes styled together. Buy the full look or single pieces. Order on WhatsApp, delivery within Nairobi.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Jost:wght@400;500&display=swap">
+<style>
+:root{
+  --bg:#0e1612; --card:#141f19; --line:#26362d; --text:#f1ede3; --mute:#9aa79d; --gold:#c9a45c;
+  --head:"Cormorant Garamond",Georgia,"Times New Roman",serif;
+  --body:"Jost",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--body);background:var(--bg);color:var(--text);line-height:1.6;font-size:16.5px}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 22px}
+
+.top{border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;justify-content:space-between;align-items:center;padding-top:18px;padding-bottom:18px}
+.logo{font-family:var(--head);font-weight:600;font-size:1.7rem;letter-spacing:.18em;text-decoration:none}
+.nav a{font-size:.92rem;color:var(--mute);text-decoration:none;margin-left:20px}
+.nav a:hover{color:var(--gold)}
+
+/* Hero: big serif, italic on the key word, one thin gold rule */
+.hero{padding:76px 0 70px}
+.hero h1{font-family:var(--head);font-weight:500;font-size:clamp(3.2rem,13vw,8rem);line-height:.95;letter-spacing:-.01em}
+.hero h1 i{font-weight:500;color:var(--gold)}
+.rule{width:72px;height:2px;background:var(--gold);margin:30px 0 24px}
+.hero p{max-width:40ch;color:var(--mute);font-size:1.1rem;margin-bottom:30px}
+.btn{display:inline-block;background:var(--gold);color:#18130a;font:inherit;font-weight:500;padding:14px 28px;border:0;border-radius:2px;text-decoration:none;cursor:pointer;letter-spacing:.02em}
+.btn:hover{background:#ddb86e}
+.btn[disabled]{opacity:.4;cursor:not-allowed}
+.btn.ghost{background:transparent;color:var(--text);border:1px solid var(--line);margin-left:10px}
+.btn.ghost:hover{border-color:var(--gold);background:transparent}
+
+section{padding:60px 0}
+h2{font-family:var(--head);font-weight:500;font-size:clamp(2rem,6vw,3rem);line-height:1.05}
+.sub{color:var(--mute);margin:8px 0 32px;max-width:52ch}
+
+/* Looks */
+.looks{display:grid;gap:22px;grid-template-columns:1fr}
+.look{background:var(--card);border:1px solid var(--line);display:flex;flex-direction:column}
+/* EDIT: set img:"photo.jpg" in the LOOKS list below to replace this block with a real photo */
+.vis{aspect-ratio:4/3;background:linear-gradient(150deg,#1f3328,#0b110e);display:grid;place-items:end start;padding:18px;font-family:var(--head);font-size:2rem;color:rgba(241,237,227,.22);overflow:hidden}
+.vis img{width:100%;height:100%;object-fit:cover;display:block;grid-area:1/1}
+.lbody{padding:22px;display:flex;flex-direction:column;gap:6px;flex:1}
+.look h3{font-family:var(--head);font-weight:600;font-size:1.8rem;line-height:1.1}
+.vibe{color:var(--mute);font-size:.95rem;margin-bottom:8px}
+.pieces{list-style:none;padding:0;margin:6px 0 14px;border-top:1px solid var(--line)}
+.pieces li{display:grid;grid-template-columns:auto 1fr auto;gap:8px 12px;align-items:center;padding:12px 0;border-bottom:1px solid var(--line)}
+.pieces input[type=checkbox]{width:20px;height:20px;accent-color:var(--gold)}
+.pieces .pn{font-size:.97rem}
+.pieces .pp{font-size:.93rem;color:var(--gold);text-align:right;white-space:nowrap}
+.pieces select{grid-column:2 / -1;font:inherit;font-size:.9rem;background:var(--bg);color:var(--text);border:1px solid var(--line);padding:7px 9px;border-radius:2px;max-width:170px}
+.tot{display:flex;justify-content:space-between;align-items:baseline;margin-top:auto;padding-top:6px}
+.tot .amt{font-family:var(--head);font-weight:600;font-size:1.9rem}
+.save{color:var(--gold);font-size:.9rem;min-height:1.4em}
+.look .btn{width:100%;text-align:center;margin-top:10px}
+
+/* How it works */
+.steps{display:grid;gap:16px;grid-template-columns:1fr}
+.step{border-top:1px solid var(--gold);padding-top:14px}
+.step .num{font-family:var(--head);font-size:1.5rem;color:var(--gold)}
+.step h3{font-weight:500;font-size:1.05rem;margin:2px 0}
+.step p{color:var(--mute);font-size:.95rem}
+.policy{margin-top:34px;border:1px solid var(--line);padding:20px 22px;color:var(--mute);font-size:.95rem}
+.policy b{color:var(--text);font-weight:500}
+
+footer{border-top:1px solid var(--line);padding:30px 0;color:var(--mute);font-size:.92rem}
+footer a{color:var(--text)}
+.fl{font-family:var(--head);font-size:1.4rem;letter-spacing:.18em;color:var(--text)}
+
+@media(min-width:760px){
+  .looks{grid-template-columns:1fr 1fr}
+  .steps{grid-template-columns:repeat(4,1fr)}
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="#">VANTÉ</a>
+    <nav class="nav"><a href="#looks">The looks</a><a href="#how">How it works</a></nav>
+  </div>
+</header>
+
+<main>
+  <div class="hero">
+    <div class="wrap">
+      <h1>Wear your<br><i>Standard.</i></h1>
+      <div class="rule"></div>
+      <p>Complete men's looks, styled head to toe. Buy the full look, or take only the pieces you want.</p>
+      <a class="btn" href="#looks">Shop the looks</a>
+      <!-- EDIT: replace 254700000000 with your WhatsApp number (no + or spaces) -->
+      <a class="btn ghost" href="https://wa.me/254700000000?text=Hi%20VANT%C3%89%2C%20I%27d%20like%20help%20choosing%20a%20look.">Ask a stylist</a>
+    </div>
+  </div>
+
+  <section id="looks">
+    <div class="wrap">
+      <h2>The looks</h2>
+      <p class="sub">Tick the pieces you want. Take every piece and the full-look price applies automatically.</p>
+      <div class="looks" id="lookList"></div>
+    </div>
+  </section>
+
+  <section id="how">
+    <div class="wrap">
+      <h2>How it works</h2>
+      <p class="sub">Delivery within Nairobi.</p>
+      <div class="steps">
+        <div class="step"><div class="num">I</div><h3>Choose your look</h3><p>Pick a full look or single pieces and your sizes.</p></div>
+        <div class="step"><div class="num">II</div><h3>We confirm stock</h3><p>We check every piece is available before asking for any payment.</p></div>
+        <div class="step"><div class="num">III</div><h3>Pay a small deposit</h3><p>A deposit by M-Pesa secures your order. The balance is paid on delivery.</p></div>
+        <div class="step"><div class="num">IV</div><h3>Delivered sealed</h3><p>Your look arrives sealed and is opened after payment.</p></div>
+      </div>
+      <!-- EDIT: change the policy wording to match how you run it. Safer option for customer trust: "Open and check at the door before paying." -->
+      <div class="policy">
+        <b>Our promise.</b> Everything is subject to availability and we confirm before you pay. If a piece is the wrong size or has a defect, we swap it within 24 hours at no extra cost.
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="fl">VANTÉ</div>
+    <!-- EDIT: your Instagram handle and WhatsApp link -->
+    <p style="margin-top:6px">Nairobi, Kenya. Follow us <a href="https://instagram.com/vante.ke">@vante.ke</a> or <a href="https://wa.me/254700000000">chat on WhatsApp</a>.</p>
+  </div>
+</footer>
+
+<script>
+// ===== EDIT THESE =====
+var WA_NUMBER = "254700000000";   // your WhatsApp number, no + or spaces
+var FULL_LOOK_DISCOUNT = 0.10;    // 10% off when every piece in a look is selected
+
+// To add a look: copy one block. img is optional, e.g. img:"boardroom.jpg" (upload the photo to the same folder)
+var LOOKS = [
+  { name:"The Boardroom", vibe:"Sharp tailoring for the office and big meetings.", img:"",
+    pieces:[
+      { n:"Tailored blazer", p:7500, s:["S","M","L","XL"] },
+      { n:"Oxford shirt", p:2400, s:["S","M","L","XL"] },
+      { n:"Slim trousers", p:3200, s:["30","32","34","36","38"] },
+      { n:"Leather derby shoes", p:5500, s:["40","41","42","43","44","45"] } ] },
+  { name:"Weekend Edit", vibe:"Clean street style for easy days and late brunches.", img:"",
+    pieces:[
+      { n:"Heavyweight tee", p:1500, s:["S","M","L","XL","XXL"] },
+      { n:"Straight-fit jeans", p:2800, s:["30","32","34","36","38"] },
+      { n:"Court sneakers", p:4500, s:["40","41","42","43","44","45"] },
+      { n:"Structured cap", p:800, s:["One size"] } ] },
+  { name:"After Dark", vibe:"Dressed up for dinner, dates and nights out.", img:"",
+    pieces:[
+      { n:"Satin-finish shirt", p:2800, s:["S","M","L","XL"] },
+      { n:"Pleated trousers", p:3500, s:["30","32","34","36","38"] },
+      { n:"Chelsea boots", p:6000, s:["40","41","42","43","44","45"] },
+      { n:"Leather belt", p:1200, s:["S","M","L"] } ] },
+  { name:"Smart Casual", vibe:"Polished but relaxed, for work-from-anywhere days.", img:"",
+    pieces:[
+      { n:"Knit polo", p:2600, s:["S","M","L","XL"] },
+      { n:"Chinos", p:3000, s:["30","32","34","36","38"] },
+      { n:"Suede loafers", p:4800, s:["40","41","42","43","44","45"] } ] }
+];
+// ======================
+
+function kes(n){ return "KES " + n.toLocaleString("en-US"); }
+
+var list = document.getElementById("lookList");
+LOOKS.forEach(function (look, li) {
+  var rows = look.pieces.map(function (pc, pi) {
+    var opts = pc.s.map(function (s) { return "<option>" + s + "</option>"; }).join("");
+    return '<li><input type="checkbox" checked aria-label="' + pc.n + '" data-i="' + pi + '">' +
+      '<span class="pn">' + pc.n + '</span><span class="pp">' + kes(pc.p) + '</span>' +
+      '<select aria-label="Size for ' + pc.n + '">' + opts + '</select></li>';
+  }).join("");
+  var vis = look.img ? '<img src="' + look.img + '" alt="' + look.name + '">' : look.name;
+  var el = document.createElement("article");
+  el.className = "look";
+  el.dataset.l = li;
+  el.innerHTML =
+    '<div class="vis">' + vis + '</div>' +
+    '<div class="lbody"><h3>' + look.name + '</h3><p class="vibe">' + look.vibe + '</p>' +
+    '<ul class="pieces">' + rows + '</ul>' +
+    '<div class="tot"><span class="save"></span><span class="amt"></span></div>' +
+    '<button class="btn order" type="button">Order on WhatsApp</button></div>';
+  list.appendChild(el);
+  update(el);
+});
+
+function state(card) {
+  var look = LOOKS[card.dataset.l], sum = 0, chosen = [];
+  card.querySelectorAll(".pieces li").forEach(function (row, i) {
+    if (row.querySelector("input").checked) {
+      var pc = look.pieces[i];
+      sum += pc.p;
+      chosen.push({ n: pc.n, p: pc.p, size: row.querySelector("select").value });
+    }
+  });
+  var full = chosen.length === look.pieces.length && chosen.length > 1;
+  var disc = full ? Math.round(sum * FULL_LOOK_DISCOUNT) : 0;
+  return { look: look, chosen: chosen, sum: sum, disc: disc, total: sum - disc, full: full };
+}
+
+function update(card) {
+  var st = state(card);
+  card.querySelector(".amt").textContent = st.chosen.length ? kes(st.total) : "KES 0";
+  card.querySelector(".save").textContent = st.full ? "Full look: you save " + kes(st.disc) : "";
+  card.querySelector(".order").disabled = !st.chosen.length;
+}
+
+list.addEventListener("change", function (e) { update(e.target.closest(".look")); });
+
+list.addEventListener("click", function (e) {
+  var b = e.target.closest(".order");
+  if (!b) return;
+  var st = state(b.closest(".look"));
+  var lines = ["Hi VANTÉ, I'd like to order:",
+    st.look.name + (st.full ? " (full look, " + Math.round(FULL_LOOK_DISCOUNT * 100) + "% off)" : " (selected pieces)")];
+  st.chosen.forEach(function (c) { lines.push("- " + c.n + ", size " + c.size + ", " + kes(c.p)); });
+  lines.push("Total: " + kes(st.total), "My delivery location: ");
+  window.open("https://wa.me/" + WA_NUMBER + "?text=" + encodeURIComponent(lines.join("\n")), "_blank");
+});
+</script>
+</body>
+</html>
